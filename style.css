@@ -109,10 +109,6 @@ section {
     cursor: pointer;
 }
 
-#navbar h1:hover {
-    scale: 130%;
-}
-
 #navbar ul {
     padding-right: 50px;
     font-family: 'DM Sans';
