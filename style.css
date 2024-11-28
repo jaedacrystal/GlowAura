@@ -1,0 +1,384 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F8EDE3;
+}
+
+section {
+    height: 100vh;
+    padding: 1%;
+    scroll-snap-type: mandatory;
+}
+
+@font-face {
+    font-family: 'Sloop';
+    src: url("fonts/sloop.ttf");
+}
+
+@font-face {
+    font-family: 'Gyahegi';
+    src: url("fonts/gyahegi.otf");
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url("fonts/dmsans.ttf");
+}
+
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url("fonts/the_seasons_regular.otf");
+}
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url("fonts/the_seasons_bold.otf");
+    font-weight: bold;
+}
+
+
+@keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+
+@keyframes fade-in {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+} 
+
+@keyframes fade-out {
+    100%{opacity: 0;}
+    0%{opacity: 1;}
+} 
+
+/** NAVBAR */
+
+@media only screen and (max-width: 800px) {
+    header nav {
+        display: none;
+    }
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F8EDE3;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.title {
+    font-weight: normal;
+    font-family: 'Gyahegi';
+    margin-right: auto;
+    font-size: 20px;
+    
+}
+
+.title span {
+    font-family: 'Sloop';
+    font-size: 60px;
+}
+
+#navbar h1 {
+    margin-top: 15px;
+    padding-left: 50px;
+    scale: 120%;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+#navbar h1:hover {
+    scale: 130%;
+}
+
+#navbar ul {
+    padding-right: 50px;
+    font-family: 'DM Sans';
+    height: 100%;
+    font-size: 25px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav li {
+    padding: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    transition: 0.4s ease-out;
+    border-radius: 15px;
+    margin-left: 15px;
+    opacity: 50%;
+}
+
+nav a:hover {
+    background-color: #DFD3C3;
+    opacity: 100%;
+}
+
+.searchbar-mobile {
+    display: flex;
+    margin-left: 10px;
+    margin-top: 5px;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid black;
+    background-color: white;
+    width: 15em;
+}
+
+.searchbar {
+    display: flex;
+    margin-left: 10px;
+    margin-top: 5px;
+    align-items: center;
+    height: 20px;
+    border-radius: 30px;
+    border: 2px solid black;
+    background-color: white;
+    width: 10em;
+    transition: 0.3s ease-out;
+}
+
+.searchbar input, .searchbar-mobile input {
+    background-color: transparent;
+    border: none;
+    font-size: 17px;
+    font-family: 'DM Sans';
+    padding: auto;
+    
+}
+
+.searchbar input:focus, .searchbar-mobile input:focus{
+    outline: none;
+}
+
+.searchbar img, .searchbar-mobile img {
+    width: auto;
+    height: 30px;
+    opacity: 50%;
+    transition: 0.3s ease-out;
+}
+
+.searchbar img:hover, .searchbar-mobile img:active{
+    opacity: 100%;
+}
+
+.searchbar button, .searchbar-mobile button{
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+}
+
+.searchbar:hover {
+    width: 12em;
+}
+
+@media only screen and (min-width: 800px) {
+    .toggle, .mobile-menu li {
+        display: none;
+    }
+}
+
+.toggle {
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: none;
+    padding-right: 100px;
+    transition: 0.3s ease-out;
+}
+
+
+.toggle img {
+    width: auto;
+    height: 10px;
+    background: none;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.toggle img:hover {
+    animation: rotate-center 0.8s;
+}
+
+#navbar .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: -1;
+    background-color: #F8EDE3;
+    height: auto;
+    margin-top: -10px;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    margin-top: 10px;
+    left: 0;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.mobile-menu a{
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+    opacity: 50%;
+    transition: 0.3s ease-out;
+    border-radius: 15px;
+}
+
+.mobile-menu a:hover {
+    opacity: 100%;
+    background-color: #DFD3C3;
+}
+
+/** HOMEPAGE */
+
+#home .background {
+    margin-top: 100px;
+    width: 100%;
+    height: 87%;
+    background-image: url("assets/home.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+  
+#home {
+    font-family: 'The Seasons';
+    color: white;
+    text-shadow: 0 0 10px white;
+    letter-spacing: 1px;
+}
+  
+#home .text {
+    background-color: #dfd3c358;
+    background-size: cover;
+    height: 100%;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+#home h1 {
+    font-size: 40px;
+}
+
+/* * RECOS */
+
+#recommendations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2%;
+  }
+  
+#recommendations .text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 11%;
+}
+  
+#recommendations h2 {
+    font-size: 40px;
+    font-family: 'DM Sans';
+    text-transform: uppercase;
+    color: #C5705D;
+}
+  
+#recommendations h1 {
+    font-size: 60px;
+    font-family: 'The Seasons';
+}
+  
+.container {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.images {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    transition: 0.3s ease-out;
+}
+
+.images:hover {
+    scale: 105%;
+}
+
+#recommendations span {
+    font-size: 30px;
+    font-family: 'The Seasons';
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+
+#recommendations span:hover {
+    font-size: 35px;
+    text-shadow: 0 0 15px rgb(0, 0, 0);
+    
+}
+
+#recommendations p {
+    font-size: 20px;
+    font-family: 'DM Sans';
+}
+
+
+.text2 {
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    margin-top: -15em;
+}
