@@ -1,0 +1,843 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F8EDE3;
+    overflow-x: hidden;
+}
+
+section {
+    height: 100vh;
+    padding: 1%;
+    scroll-snap-type: mandatory;
+}
+
+@font-face {
+    font-family: 'Sloop';
+    src: url("fonts/sloop.ttf");
+}
+
+@font-face {
+    font-family: 'Gyahegi';
+    src: url("fonts/gyahegi.otf");
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url("fonts/dmsans.ttf");
+}
+
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url("fonts/the_seasons_regular.otf");
+}
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url("fonts/the_seasons_bold.otf");
+    font-weight: bold;
+}
+
+
+@keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+
+@keyframes fade-in {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+} 
+
+@keyframes fade-out {
+    100%{opacity: 0;}
+    0%{opacity: 1;}
+} 
+
+@media only screen and (max-width: 600px) {
+    header nav {
+        display: none;
+    }
+
+    #menu {
+        position: absolute;
+        right: 0;
+    }
+
+    #home h1, h2 {
+        scale: 70%;
+    }
+
+    #home h2 {
+        white-space: nowrap;;
+    }
+
+    #recommendations .text {
+        white-space: nowrap;
+        scale: 60%;
+        padding-top: 10em;
+    }
+    #recommendations p {
+        scale: 100%;
+        width: 140%;
+        margin-left: -40px;
+    }
+
+    #recommendations .container {
+        scale: 80%;
+        display: flex;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        margin-top: -5em;
+        text-align: center;
+    }
+
+    #recommendations .container::-webkit-scrollbar, .productimg::-webkit-scrollbar {
+        display: none;
+
+    }
+
+    #recommendations .images {
+        scale: 80%;
+    }
+
+    #recommendations .images {
+        scroll-snap-align: center;
+    }
+
+    #recommendations h2 {
+        font-weight: 550;
+    }
+
+    .images:hover {
+        scale: 100%;
+    }
+
+    #about {
+        margin-bottom: -20em;
+    }
+
+    #about h1 {
+        white-space: nowrap;
+        margin-left: -20px;
+    }
+
+    #about .text {
+        scale: 50%;
+        padding: 5px;
+    }
+
+    #about .image {
+        display: none;
+    }
+
+    #about .abt {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #products {
+        scale: 75%;
+    }
+
+    .container2 {
+        margin-top: 17em;
+        display: block;
+    }
+
+    .productimg {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        height: 100%;
+        padding: 20% 0 0 0;
+    }
+
+
+    .pimgs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 85%;
+    }
+
+    .pimg label {
+        width: 59%;
+        scale: 159%;
+        margin-left: 2.8em;
+        margin-top: 15px;
+    }
+
+    footer .footer-text {
+        margin-left: 0;
+        scale: 80%; 
+    }
+
+    footer p {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer h2 {
+        margin-left: -30px;
+    }
+
+    footer a {
+        margin-right: 0;
+        scale: 80%;
+    }
+
+    #members {
+        scale: 70%;
+    }
+
+    #members h1 {
+        width: 100%;
+        margin-top: -3em;
+    }
+
+    .member-text h2 {
+        white-space: nowrap;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+    .toggle, .mobile-menu li {
+        display: none;
+    }
+
+    #recommendations h3 {
+        display: none;
+    }
+
+    #about .text {
+        padding: 50px;
+    }
+
+    .container2 {
+        margin-top: 2%;
+    }
+
+    footer .text {
+        margin: 50px;
+    }
+
+    footer a {
+        margin-right: 50px;
+    }
+
+    #foot:hover {
+        scale: 120%;
+    }
+
+    #members h1 {
+        width: 50%;
+        margin-top: 3em;
+    }
+}
+
+/** NAVBAR */
+
+#navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F8EDE3;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+form {
+    display: flex;
+}
+
+.title {
+    font-weight: normal;
+    font-family: 'Gyahegi';
+    margin-right: auto;
+    font-size: 20px;
+    
+}
+
+.title span {
+    font-family: 'Sloop';
+    font-size: 60px;
+}
+
+#navbar h1 {
+    margin-top: 15px;
+    padding-left: 50px;
+    scale: 120%;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+#navbar ul {
+    padding-right: 50px;
+    font-family: 'DM Sans';
+    height: 100%;
+    font-size: 25px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav li {
+    padding: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    transition: 0.4s ease-out;
+    border-radius: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    opacity: 50%;
+}
+
+nav a:hover {
+    background-color: #DFD3C3;
+    opacity: 100%;
+}
+
+.searchbar-mobile {
+    display: flex;
+    margin-top: 5px;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid black;
+    background-color: white;
+    width: 10em;
+}
+
+.searchbar {
+    display: flex;
+    margin-top: 5px;
+    align-items: center;
+    height: 20px;
+    border-radius: 30px;
+    border: 2px solid black;
+    background-color: white;
+    width: 10em;
+    transition: 0.3s ease-out;
+}
+
+.searchbar input, .searchbar-mobile input {
+    background-color: transparent;
+    border: none;
+    font-size: 17px;
+    font-family: 'DM Sans';
+    padding: auto;
+}
+
+.searchbar input:focus, .searchbar-mobile input:focus{
+    outline: none;
+}
+
+.searchbar img, .searchbar-mobile img {
+    width: auto;
+    height: 30px;
+    opacity: 50%;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    border: none;
+}
+
+.searchbar img:hover, .searchbar-mobile img:active{
+    opacity: 100%;
+}
+
+.searchbar button, .searchbar-mobile button{
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+}
+
+.searchbar:hover {
+    width: 12em;
+}
+
+.toggle {
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: none;
+    margin-right: 50px;
+    transition: 0.3s ease-out;
+}
+
+
+.toggle img {
+    width: auto;
+    height: 10px;
+    background: none;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.toggle img:hover {
+    animation: rotate-center 0.8s;
+}
+
+#navbar .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: -1;
+    background-color: #F8EDE3;
+    height: auto;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    left: 0;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.mobile-menu a{
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+    opacity: 50%;
+    transition: 0.3s ease-out;
+    border-radius: 15px;
+}
+
+.mobile-menu a:active {
+    opacity: 100%;
+    background-color: #DFD3C3;
+}
+
+/** HOMEPAGE */
+
+#home .background {
+    height: 87%;
+    background-image: url("assets/home.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin-top: 6.5em;
+}
+  
+#home {
+    font-family: 'The Seasons';
+    color: white;
+    text-shadow: 0 0 10px white;
+    letter-spacing: 1px;
+}
+  
+#home .text {
+    background-color: #dfd3c358;
+    background-size: cover;
+    height: 100%;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+#home h1 {
+    font-size: 40px;
+}
+
+#home button {
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    width: 15em;
+    margin-top: 20px;
+    font-family: 'DM Sans';
+    background-color: #F8EDE3;
+    transition: 0.3s ease-out;
+    color: black;
+    cursor: pointer;
+}
+
+#home button:hover {
+    scale: 110%;
+    background-color: #DFD3C3;
+}
+
+/* * RECOS */
+
+#recommendations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2%;
+  }
+  
+  #recommendations .text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 15%;
+  }
+  
+  #recommendations h2 {
+    font-size: 40px;
+    font-family: 'DM Sans';
+    text-transform: uppercase;
+    color: #C5705D;
+  }
+  
+  #recommendations h1 {
+    font-size: 60px;
+    font-family: 'The Seasons';
+  }
+  
+  .container {
+    height: 100%;
+    width: 80%;
+    display: grid;
+    gap: 10em;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    padding: 5px;
+    scale: 80%;
+  }
+  
+  .images {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s ease-out;
+  }
+  
+  .images:hover {
+    scale: 105%;
+  }
+  
+  #recommendations span {
+    font-size: 30px;
+    font-family: 'The Seasons';
+    cursor: pointer;
+    transition: 0.3s ease-out;
+  }
+  
+  #recommendations span:hover {
+    font-size: 35px;
+    text-shadow: 0 0 15px rgb(0, 0, 0);
+  }
+  
+  #recommendations p {
+    font-size: 23px;
+    font-family: 'DM Sans';
+    margin-top: 10px;
+  }
+  
+  .text2 {
+    height: 100%;
+    max-width: 70%;
+    text-align: center;
+    margin-top: -16em;
+    max-height: 70%;
+  }
+
+  #recommendations h3 {
+    color: black;
+    font-size: 20px;
+    font-family: 'DM Sans';
+    opacity: 50%;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: normal;
+  }
+
+  /** ABOUT US */
+
+  .abt {
+    height: 100%;
+    background-color: #dfd3c38d;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 2px solid black;
+    margin-top: 6.5em;
+    display: flex;
+  }
+
+  #about .title {
+    font-size: 60px;
+    padding: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'The Seasons';
+  }
+
+  #about .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .subtext {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    font-family: 'DM Sans';
+  }
+
+  .subtext p {
+    margin-bottom: 25px;
+  }
+
+  .subtext a {
+    text-decoration: underline transparent 2px;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s ease-out;
+  }
+
+  .subtext a:hover {
+    text-decoration-color: black;
+  }
+
+  .about-background {
+    height: 87%;
+    width: 100%;
+    background-image: url("assets/img5.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+  }
+
+  .aboutimg {
+    height: 500px;
+    border: 2px solid black;
+    border-radius: 15px;
+    transition: 0.3s ease-out;
+  }
+
+  .aboutimg:hover {
+    scale: 110%;
+  }
+
+  .image {
+    padding: 50px;
+    align-self: center;
+  }
+
+/** PRODUCTS */
+
+.container2 {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+#products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+#products h1 {
+    margin-top: 10vh;
+    font-size: 60px;
+    font-family: 'The Seasons';
+    text-align: center;
+    padding-bottom: 7vh;
+}
+
+#products a {
+    color: black;
+    text-decoration: none;
+}
+
+#products label {
+    transition: ease-out 0.3s;
+}
+
+#products label:hover {
+    cursor: pointer;
+    background-color: #a59286;
+}
+
+.pimgs {
+    margin-top: -150px;
+    display: inline-flex;
+    scale: 60%;
+    scroll-snap-align: center;
+}
+
+.pimg {
+    transition: ease-out 0.3s;
+}
+
+.pimg:hover {
+    scale: 110%
+}
+
+.pimg label {
+    display: block;
+    padding: 10px;
+    background-color: #d0b8a8;
+    font-size: 30px;
+    font-family: 'The Seasons';
+    text-align: center;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/** FOOTER */
+
+footer {
+    background-color: #C5705D;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-text {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+footer p {
+    font-family: 'DM Sans';
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+
+footer p:hover {
+    font-weight: bold;
+}
+
+footer h2 {
+    font-family: 'The Seasons';
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+    margin-left: -19px;
+}
+
+#foot {
+    position: absolute;
+    right: 0;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+    margin-top: 10px;
+    color: black;
+    text-decoration: none;
+    overflow-x: hidden;
+}
+
+/** MEMBERS */
+
+#members {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#members h1 {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'The Seasons';
+    background-color: #DFD3C3;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.member, .member2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2%;
+    margin-top: 50px;
+}
+
+.member h2, .member2 h2 {
+    font-family: "The Seasons";
+}
+
+.member-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'DM Sans';
+    font-size: 20px;
+}
+
+.member-text span {
+    color: #C5705D;
+    font-weight: bold;
+}
+
+.member img, .member2 img {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    border: 2px solid black;
+    transition: 0.3s ease-out;
+}
+
+.member img:hover, .member2 img:hover {
+    scale: 110%;
+}
+
+.member2 {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    padding: 2%;
+}

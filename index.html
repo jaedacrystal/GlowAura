@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Glow Aura</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <header>
+            <div id="navbar">
+                <h1 class="title"><span>G</span>low <span>A</span>ura</h1>
+                <nav>
+                    <ul>
+                        <a href="#home"><li>Home</li></a>
+                        <a href="#about"><li>About Us</li></a>
+                        <a href="#products"><li>Products</li></a>
+                        <li class="searchbar">
+                            <form>
+                                <button type="submit" class="searchbutton"> <img src="assets/search.png"> </button>
+                                <input type="text" placeholder="Search an Ingredient">
+                            </form>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <div class="menu">
+                    <button class="toggle"><img src="assets/menu.png"></button>
+                    <ul class="mobile-menu">
+                        <a href="#home"><li>Home</li></a>
+                        <a href="#about"><li>About Us</li></a>
+                        <a href="#products"><li>Products</li></a>
+                        <li class="searchbar-mobile">
+                            <form>
+                                <button type="submit" class="searchbutton"> <img src="assets/search.png"> </button>
+                                <input type="text" placeholder="Search an Ingredient">
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </header>
+
+    <section id="home">
+        <div class="background">
+            <div class="text">
+                <h1>Active Ingredients Directory</h1>
+                <h2>Everything about Active Ingredients</h2>
+                <button onclick="search()">Get Started!</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="recommendations">
+        <div class="text">
+            <h2>here are some recommendations for:</h2>
+            <h1>Anti Aging</h1>
+            <h3>(Scroll Horizontally)</h3>
+        </div>
+
+            <div class="container">
+                <div class="images">
+                    <img src="assets/vitc.png">
+                    <div class="text2">
+                        <span class="vitc">Vitamin C</span>
+                        <p class="vitc-p">Vitamin C can help fight off the signs of aging and it can also help keep skin look younger by increasing collagen production.</p>
+                    </div>
+
+                </div>
+
+                <div class="images">
+                    <img src="assets/ret.png">
+                    <div class="text2">
+                        <span class="ret">Retinol</span>
+                        <p class="ret-p">Retinol exfoliates your skin and increases collagen production, which helps reduce the appearance of fine lines and wrinkles on our face.</p>
+                    </div>
+
+                </div>
+                <div class="images">
+                    <img src="assets/nia.png">
+                    <div class="text2">
+                        <span class="nia">Niacinamide</span>
+                        <p class="nia-p">Niacinamide can reduce the appearance of fine lines by increasing collagen production and speeding up cell turnover.</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section id="about">
+        <div class="about-background">
+            <div class="abt">
+                <div class="text">
+                    <h1 class="title">About Us</h1>
+    
+                    <div class="subtext">
+                        <p>GlowAura is all about enhancing your inherent beauty through skin care ingredients. The ingredients found in our site are made to preserve, hydrate, and restore the youthful glow to your skin. The main purpose of this website is to inform consumers about skin care ingredients and which suits your skin better.</p>
+                        <p>Our website has a careful selection of ingredients designed to keep your skin healthy and happy. We have you covered whether you're searching for hydration, anti-aging, or brightening.</p>
+                        <p>Check out our <a href="members.html">contributors</a>!</p>
+                    </div>
+                </div>
+    
+                <div class="image">
+                    <img src="assets/img4.jpg" class="aboutimg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container2">
+            <h1>Products</h1>
+            <div class="productimg">
+                <div class="pimgs">
+                    <div class="pimg">
+                        <img src="assets/img (1).png">
+                        <a href="ingredients/ceramides.html" target="_blank"><label>Ceramides</label></a>
+                    </div>
+                </div>
+
+                <div class="pimgs">
+                    <div class="pimg">
+                        <img src="assets/img (2).png">
+                        <a href="ingredients/vitaminc.html" target="_blank"><label>Vitamin C</label></a>
+                    </div>
+                </div>
+
+                <div class="pimgs">
+                    <div class="pimg">
+                        <img src="assets/img (3).png">
+                        <a href="ingredients/niacinamide.html" target="_blank"><label class="niacinamide">Niacinamide</label></a> 
+                    </div>
+                </div>
+
+                </br>
+
+                <div class="pimgs">
+                    <div class="pimg">
+                        <img src="assets/img (4).png">
+                        <a href="ingredients/hyacid.html" target="_blank"><label class="hya">Hyaluronic Acid</label></a>
+                    </div>
+                </div>
+
+                <div class="pimgs">
+                    <div class="pimg">
+                        <img src="assets/img (5).png">
+                        <a href="ingredients/retinol.html" target="_blank"><label class="retinol">Retinol</label></a>
+                    </div>
+                </div>
+
+                <div class="pimgs">
+                    <div class="pimg">
+                        <img src="assets/img (6).png">
+                        <a href="ingredients/salicylic.html" target="_blank"><label class="niacinamide">Salicylic Acid</label></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+<footer>
+    <div class="footer-text">
+        <h2>Contact Us</h2>
+        <p>0912-345-6789</p>
+        <p>glowauraph@gmail.com</p>
+    </div>
+    
+    <a href="#home" id="foot">
+        <h1 class="title"> <span>G</span>low <span>A</span>ura </h1> 
+    </a> 
+</footer>
+
+</html>

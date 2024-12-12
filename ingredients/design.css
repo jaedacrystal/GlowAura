@@ -1,0 +1,716 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F8EDE3;
+    overflow-x: hidden;
+}
+
+section {
+    height: 150vh;
+    scroll-snap-type: mandatory;
+}
+
+@font-face {
+    font-family: 'Sloop';
+    src: url("../fonts/sloop.ttf");
+}
+
+@font-face {
+    font-family: 'Gyahegi';
+    src: url("../fonts/gyahegi.otf");
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url("../fonts/dmsans.ttf");
+}
+
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url("../fonts/the_seasons_regular.otf");
+}
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url("../fonts/the_seasons_bold.otf");
+    font-weight: bold;
+}
+
+@keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+
+@keyframes fade-in {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+} 
+
+@keyframes fade-out {
+    100%{opacity: 0;}
+    0%{opacity: 1;}
+} 
+
+@media only screen and (max-width: 600px) {
+    header nav {
+        display: none;
+    }
+
+    #menu {
+        position: absolute;
+        right: 0;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .img {
+        scale: 70%;
+    }
+
+    .benefits {
+        flex-direction: column;
+    }
+
+    .benefits-text {
+        font-family: 'The Seasons';
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 20px;
+        justify-content: center;
+        margin-bottom: -4em;
+    }
+
+    .benefits li {
+        margin-top: 10px;
+        padding: 20px;
+    }
+
+    .text {
+        scale: 80%;
+        width: 100%;
+        margin-top: -10.5em;
+    }
+
+    .suggestions {
+        scale: 70%;
+        border-radius: 15px;
+        margin-top: -2em;
+        white-space: nowrap;
+    }
+
+
+    .products {
+        height: 100%;
+        width: 100%;
+        overflow-y: hidden;
+        display: flex;
+        scroll-snap-type: x mandatory;
+    }
+
+    .products::-webkit-scrollbar {
+        display: none;
+
+    }
+
+    .product {
+        scale: 80%;
+        scroll-snap-align: center;
+    }
+
+    .container3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        scale: 80%;
+        width: 120%;
+        margin-left: -2.5em;
+    }
+
+    footer {
+        background-color: #C5705D;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: 200em;
+        width: 100%;
+    }
+
+    .footer-title {
+        margin-left: 3em;
+        scale: 80%;
+        white-space: nowrap;
+    }
+
+    .footer-text {
+        margin-left: 0;
+        scale: 80%; 
+    }
+
+    footer p {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer a {
+        margin-right: 0;
+        scale: 80%;
+    }
+
+    .container3 a {
+       display: none;
+    }
+
+    .benefits li {
+        opacity: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+    .toggle, .mobile-menu li {
+        display: none;
+    }
+
+    .container {
+        flex-direction: row;
+    }
+
+    .benefits {
+        flex-direction: row;
+    }
+
+    .benefits-text {
+        font-family: 'The Seasons';
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 90em;
+        width: 40%;
+    }
+
+    .benefits li {
+        padding: 20px;
+        margin-left: 20px;
+        opacity: 70%;
+    }
+
+    .benefits li:hover {
+        padding-right: 5%;
+        padding-left: 5%;
+        opacity: 100%;
+    }
+
+    .text {
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+
+    .container3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 20px;
+        height: 100%;
+    }
+
+    footer {
+        background-color: #C5705D;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .footer-title {
+        margin-right: 50px;
+        position: absolute;
+        right: 0;
+        margin-top: -1.8em;
+    }
+
+    .footer-text {
+        margin-left: 50px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    #foot:hover {
+        scale: 120%;
+    } 
+}
+
+/** NAVBAR */
+
+#navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F8EDE3;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+form {
+    display: flex;
+}
+
+.title {
+    font-weight: normal;
+    font-family: 'Gyahegi';
+    margin-right: auto;
+    font-size: 20px;
+    
+}
+
+.title span {
+    font-family: 'Sloop';
+    font-size: 60px;
+}
+
+#navbar h1 {
+    margin-top: 15px;
+    padding-left: 50px;
+    scale: 120%;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+#navbar ul {
+    padding-right: 50px;
+    font-family: 'DM Sans';
+    height: 100%;
+    font-size: 25px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav li {
+    padding: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    transition: 0.4s ease-out;
+    border-radius: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    opacity: 50%;
+}
+
+nav a:hover {
+    background-color: #DFD3C3;
+    opacity: 100%;
+}
+
+.searchbar-mobile {
+    display: flex;
+    margin-top: 5px;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid black;
+    background-color: white;
+    width: 10em;
+}
+
+.searchbar {
+    display: flex;
+    margin-top: 5px;
+    align-items: center;
+    height: 20px;
+    border-radius: 30px;
+    border: 2px solid black;
+    background-color: white;
+    width: 10em;
+    transition: 0.3s ease-out;
+}
+
+.searchbar input, .searchbar-mobile input {
+    background-color: transparent;
+    border: none;
+    font-size: 17px;
+    font-family: 'DM Sans';
+    padding: auto;
+}
+
+.searchbar input:focus, .searchbar-mobile input:focus{
+    outline: none;
+}
+
+.searchbar img, .searchbar-mobile img {
+    width: auto;
+    height: 30px;
+    opacity: 50%;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    border: none;
+}
+
+.searchbar img:hover, .searchbar-mobile img:active{
+    opacity: 100%;
+}
+
+.searchbar button, .searchbar-mobile button{
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+}
+
+.searchbar:hover {
+    width: 12em;
+}
+
+.toggle {
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: none;
+    margin-right: 50px;
+    transition: 0.3s ease-out;
+}
+
+
+.toggle img {
+    width: auto;
+    height: 10px;
+    background: none;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.toggle img:hover {
+    animation: rotate-center 0.8s;
+}
+
+#navbar .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: -1;
+    background-color: #F8EDE3;
+    height: auto;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    left: 0;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.mobile-menu a{
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+    opacity: 50%;
+    transition: 0.3s ease-out;
+    border-radius: 15px;
+}
+
+.mobile-menu a:active {
+    opacity: 100%;
+    background-color: #DFD3C3;
+}
+
+/** INGREDIENTS */
+
+#ingredient {
+    display: flex;
+    flex-direction: column;
+}
+
+.text a {
+    font-size: 15px;
+    display: flex;
+}
+
+
+.container {
+    display: flex;
+    padding: 5%;
+}
+
+.img img {
+    height: 30em;
+    width: 30em;
+    border-radius: 15px;
+    border: 2px black solid;
+}
+
+.img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.benefits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: black;
+    width: 100%;
+}
+
+#button-benefits {
+    padding: 15px;
+    width: 5em;
+    border: 2px solid black;
+    border-radius: 30px;
+    background-color: transparent;
+    font-size: 30px;
+    font-family: 'The Seasons';
+    margin-top: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    color: black;
+}
+
+#button-benefits:hover {
+    scale: 110%;
+    background-color: #DFD3C3;
+}
+
+.benefits li {
+    width: 100%;
+    white-space: nowrap;
+    list-style: none;
+    background-color: #DFD3C3;
+    border-radius: 30px;
+    font-size: 25px;
+    text-align: center;
+    cursor: default;
+    transition: 0.3s ease-out;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.text p {
+    font-size: 25px;
+    font-family: 'DM Sans';
+    margin-top: 15px;
+    text-align: justify;
+}
+
+.text h1 {
+    text-align: center;
+    background-color: #DFD3C3;
+    padding: 20px;
+    font-size: 40px;
+    font-family: 'The Seasons';
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+/** PRODUCTS */
+
+#ingredient .suggestions {
+    padding: 20px;
+    font-size: 40px;
+    font-family: 'The Seasons';
+    background-color: #DFD3C3;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.container2 {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #DFD3C3;
+    border: black solid;
+    border-width: 2px 0 2px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.products {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+#prodimg {
+    width: 300px;
+    height: 300px;
+    border: 2px black solid;
+    border-radius: 15px;
+}
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.cart img {
+    width: 60px;
+    padding: 5px;
+}
+
+.cart {
+    transform: translate(150px, -60px);
+    border-radius: 60px;
+    border: 2px solid black;
+    background-color: #F8EDE3;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+.cart:hover {
+    transform: translate(135px, -60px);
+    background-color: #D0B8A8;
+    scale: 110%;
+}
+
+.product p {
+    padding: 15px;
+    margin-top: -2.5em;
+    background-color: #F8EDE3;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-family: 'DM Sans';
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    transition: 0.3s ease-out;
+}
+
+.product a {
+    text-align: center;
+    display: flex;
+    color: black;
+    text-decoration: none;
+}
+
+.product p:hover {
+    background-color: #D0B8A8;
+}
+
+/** USAGE AND STORAGE */
+
+.container3 h1 {
+    font-size: 30px;
+    background-color: #DFD3C3;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'The Seasons';
+}
+
+.container3 p {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: -10px;
+    font-family: 'DM Sans';
+}
+
+.container3 a, .text a {
+    font-family: 'DM Sans';
+    opacity: 70%;
+    transition: 0.3s ease-out;
+    font-style: italic;
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.container3 a:hover, .text a:hover {
+    font-family: 'DM Sans';
+    opacity: 100%;
+}
+
+
+.usage, .storage {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 20px;
+    text-align: justify;
+    
+}
+
+/** FOOTER */
+
+footer p {
+    font-family: 'DM Sans';
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+
+footer p:hover {
+    font-weight: bold;
+}
+
+footer h2 {
+    font-family: 'The Seasons';
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+    margin-left: -19px;
+}
+
+#foot {
+    transition: 0.3s ease-out;
+    cursor: pointer;
+    margin-top: 10px;
+    color: black;
+    text-decoration: none;
+    overflow-x: hidden;
+}
+
+.footer-title {
+    font-weight: normal;
+    font-family: 'Gyahegi';
+    font-size: 20px;
+}
+
+.footer-title span {
+    font-family: 'Sloop';
+    font-size: 60px;
+}
